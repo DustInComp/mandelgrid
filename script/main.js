@@ -12,8 +12,8 @@ function draw() {
 	var c = document.getElementById("canvas");
 	ctx = c.getContext("2d");
 
-	c.width = c.clientWidth;
-	c.height = c.clientHeight;
+	c.width = c.clientWidth = innerWidth;
+	c.height = c.clientHeight = innerHeight;
 	ctx.globalCompositeOperation = 'xor';
 
 	for (var i = 0; i < imax; i++) {
