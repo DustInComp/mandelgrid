@@ -9,7 +9,6 @@ function updateVar() {
 }
 
 function draw() {
-	updateVar();
 	var c = document.getElementById("canvas");
 	ctx = c.getContext("2d");
 
@@ -33,14 +32,13 @@ document.addEventListener( "mousemove", function(e) {
 }, false);
 
 document.addEventListener( "DOMContentLoaded", function() {
-	setTimeout( function() {
-		r = Math.ceil( prompt("Scale", 100) ) || 100;
-		imax = Math.ceil( prompt("Complexity", 50) ) || 50;
+	r = Math.ceil( prompt("Scale", 100) ) || 100;
+	imax = Math.ceil( prompt("Complexity", 50) ) || 50;
 
-		draw();
-	}, 0 );
+	updateVar();
+	draw();
 });
 
-window.onresize = function(event) {draw()};
+window.onresize = function(event) {updateVar(); draw()};
 
 setInterval( draw, 16 );
